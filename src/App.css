@@ -1,0 +1,11 @@
+/* ensure content isn't hidden behind fixed header */
+body {
+  margin: 0;
+  padding-top: 56px; /* adjust if your navbar height changes */
+}
+
+/* make navbar span full width */
+.navbar {
+  width: 100%;
+  
+}
