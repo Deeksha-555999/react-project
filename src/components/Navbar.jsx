@@ -20,7 +20,7 @@ const Navbar = (props) => {
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="/navbarSupportedContent"
+          data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
@@ -37,8 +37,8 @@ const Navbar = (props) => {
             <li className="nav-item">
               <Link className="nav-link" to="/about">
                 {about} {/* use props to set title of navbar */}
-              </Link>
-            </li>
+               </Link>
+            </li> 
           </ul>
              <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
             <input

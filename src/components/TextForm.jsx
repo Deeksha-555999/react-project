@@ -27,8 +27,8 @@ const TextForm = (props) => {
 
   return (
     <>
-      <div className="container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
-        <h1>{heading}</h1>
+      <div className="container" style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>
+        <h1 className="mb-4">{heading}</h1>
         <div className="mb-3">
           <textarea
             className="form-control"
@@ -36,27 +36,27 @@ const TextForm = (props) => {
             onChange={handleOnChange}
             id="myBox"
             rows="8"
-            style={{ background: props.mode === 'dark' ? '#353a3e14' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
+            style={{ background: props.mode === 'dark' ? '#13466e' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+        <button disabled={text.length === 0} className="btn btn-primary mx-2" onClick={handleUpClick}>
           Convert to Uppercase{" "}
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleLowClick}>
+        <button disabled={text.length === 0} className="btn btn-primary mx-2" onClick={handleLowClick}>
           Convert to Lowercase{" "}
         </button>
 
-        <button className="btn btn-primary mx-2" onClick={handleClearClick}>
+        <button disabled={text.length === 0} className="btn btn-primary mx-2" onClick={handleClearClick}>
           Clear Text
         </button>
       </div>
       <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
         <h2>Your Text Summary</h2>
         <p>
-          {text.split(" ").length} words and {text.length} characters
+          {text.split(" ").filter((word) => word !== "").length} words and {text.length} characters
         </p>
         <h2>Preview</h2>
-        <p>{text.length > 0 ? text : "Enter text to preview"}</p>
+        <p>{text.length > 0 ? text : "Nothing to preview!"}</p>
       </div>
     </>
   );
